@@ -5,6 +5,7 @@ services:
       - 1.1.1.1
     build:
       context: .
+      network: host
       args:
         # These are inlined into the JS bundle at build time.
         # Values are read from .env.local via `--env-file` flag.
