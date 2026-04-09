@@ -4,7 +4,7 @@ FROM node:22-slim AS base
 FROM base AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN NODE_OPTIONS="--max-old-space-size=512" npm ci --prefer-offline
 
 # --- Build the application ---
 FROM base AS builder
