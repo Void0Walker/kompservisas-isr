@@ -3,6 +3,7 @@
 const { i18n } = require("./next-i18next.config");
 
 module.exports = {
+  output: "standalone",
   env: {
     ADWORDS_TAG: process.env.ADWORDS_TAG,
     ANALYTICS_TAG: process.env.ANALYTICS_TAG,

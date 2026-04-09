@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        # These are inlined into the JS bundle at build time.
+        # Values are read from .env.local via `--env-file` flag.
+        ADWORDS_TAG: ${ADWORDS_TAG:-}
+        ANALYTICS_TAG: ${ANALYTICS_TAG:-}
+        NEXT_PUBLIC_STRAPI_GRAPHQL_URL: ${NEXT_PUBLIC_STRAPI_GRAPHQL_URL:-}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    restart: unless-stopped
