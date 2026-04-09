@@ -13,6 +13,8 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="" />
+          <link rel="dns-prefetch" href="https://res.cloudinary.com" />
           {/* Fonts are self-hosted via next/font in _app.tsx */}
           {(this.props as any).emotionStyleTags}
         </Head>

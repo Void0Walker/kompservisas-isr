@@ -12,6 +12,52 @@ import preparePagrindinisData from "@/src/pages/Pagrindinis/pagrindinisData";
 import { useTranslation, Trans } from "next-i18next";
 import Link from "@/src/Link";
 import ProductCard from "@/src/components/ProductCard";
+import { createCloudinaryImageUrl, createCloudinarySrcSet } from "@/src/helpers/utils";
+
+const HERO_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1642270949/kompservisas-landing-page/original.webp";
+
+const HERO_IMAGE_SRC = createCloudinaryImageUrl(HERO_IMAGE_BASE_URL, "f_auto,q_auto,w_640");
+
+const HERO_IMAGE_SRC_SET = createCloudinarySrcSet(HERO_IMAGE_BASE_URL, [320, 480, 640, 900, 1200]);
+
+const CATALOGUE_IMAGE_SIZES = "(max-width: 600px) 120px, (max-width: 900px) 160px, 220px";
+
+const LENOVO_L480_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/z_1/v1642615146/kompservisas-landing-page/Lenovo-L480.webp";
+
+const DELL_TOWERS_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1647204074/kompservisas-landing-page/Dell-towers-optimised.webp";
+
+const LENOVO_L480_IMAGE_SRC = createCloudinaryImageUrl(LENOVO_L480_IMAGE_BASE_URL, "f_auto,q_auto,w_320");
+const DELL_TOWERS_IMAGE_SRC = createCloudinaryImageUrl(DELL_TOWERS_IMAGE_BASE_URL, "f_auto,q_auto,w_320");
+
+const LENOVO_L480_IMAGE_SRC_SET = createCloudinarySrcSet(LENOVO_L480_IMAGE_BASE_URL, [160, 240, 320, 480, 600]);
+const DELL_TOWERS_IMAGE_SRC_SET = createCloudinarySrcSet(DELL_TOWERS_IMAGE_BASE_URL, [160, 240, 320, 480, 600]);
+
+const HOME_SECTION_IMAGE_SIZES = "(max-width: 900px) 0px, 252px";
+const HOME_SECTION_IMAGE_WIDTH_SET = [300, 450, 600, 750];
+
+const ABOUT_US_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1703329685/kompservisas-landing-page/slick-stack-nobg.webp";
+const PREPARATION_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1703418182/kompservisas-landing-page/preparation.png";
+const WARRANTY_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1703419173/kompservisas-landing-page/warrant-no-bg.png";
+const BUSINESS_IMAGE_BASE_URL =
+  "https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1703420077/kompservisas-landing-page/handshake.png";
+
+const ABOUT_US_IMAGE_SRC = createCloudinaryImageUrl(ABOUT_US_IMAGE_BASE_URL, "f_auto,q_auto,w_600");
+const PREPARATION_IMAGE_SRC = createCloudinaryImageUrl(PREPARATION_IMAGE_BASE_URL, "f_auto,q_auto,w_600");
+const WARRANTY_IMAGE_SRC = createCloudinaryImageUrl(WARRANTY_IMAGE_BASE_URL, "f_auto,q_auto,w_600");
+const BUSINESS_IMAGE_SRC = createCloudinaryImageUrl(BUSINESS_IMAGE_BASE_URL, "f_auto,q_auto,w_600");
+
+const ABOUT_US_IMAGE_SRC_SET = createCloudinarySrcSet(ABOUT_US_IMAGE_BASE_URL, HOME_SECTION_IMAGE_WIDTH_SET);
+const PREPARATION_IMAGE_SRC_SET = createCloudinarySrcSet(PREPARATION_IMAGE_BASE_URL, HOME_SECTION_IMAGE_WIDTH_SET);
+const WARRANTY_IMAGE_SRC_SET = createCloudinarySrcSet(WARRANTY_IMAGE_BASE_URL, HOME_SECTION_IMAGE_WIDTH_SET);
+const BUSINESS_IMAGE_SRC_SET = createCloudinarySrcSet(BUSINESS_IMAGE_BASE_URL, HOME_SECTION_IMAGE_WIDTH_SET);
+
+const HERO_IMAGE_SIZES = "(max-width: 600px) 45vw, (max-width: 900px) 50vw, 420px";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
@@ -85,7 +131,11 @@ const AboutUsBox = () => {
           },
         }}
         alt="stacked laptops"
-        src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/w_600/v1703329685/kompservisas-landing-page/slick-stack-nobg.webp"
+        decoding="async"
+        loading="lazy"
+        sizes={HOME_SECTION_IMAGE_SIZES}
+        src={ABOUT_US_IMAGE_SRC}
+        srcSet={ABOUT_US_IMAGE_SRC_SET}
       />
       <Typography
         fontSize={"2rem"}
@@ -148,7 +198,11 @@ const PreparationBox = () => {
           },
         }}
         alt="DELL towers"
-        src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/w_600/v1703418182/kompservisas-landing-page/preparation.png"
+        decoding="async"
+        loading="lazy"
+        sizes={HOME_SECTION_IMAGE_SIZES}
+        src={PREPARATION_IMAGE_SRC}
+        srcSet={PREPARATION_IMAGE_SRC_SET}
       />
     </StyledBox>
   );
@@ -168,7 +222,11 @@ const WarrantyBox = () => {
           },
         }}
         alt="DELL towers"
-        src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/w_600/v1703419173/kompservisas-landing-page/warrant-no-bg.png"
+        decoding="async"
+        loading="lazy"
+        sizes={HOME_SECTION_IMAGE_SIZES}
+        src={WARRANTY_IMAGE_SRC}
+        srcSet={WARRANTY_IMAGE_SRC_SET}
       />
       <Typography
         fontSize={"2rem"}
@@ -222,7 +280,11 @@ const BusinessBox = () => {
           },
         }}
         alt="DELL towers"
-        src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/v1703420077/kompservisas-landing-page/handshake.png"
+        decoding="async"
+        loading="lazy"
+        sizes={HOME_SECTION_IMAGE_SIZES}
+        src={BUSINESS_IMAGE_SRC}
+        srcSet={BUSINESS_IMAGE_SRC_SET}
       />
     </StyledBox>
   );
@@ -270,7 +332,12 @@ const Pagrindinis: React.FC = () => {
           component="img"
           sx={styles.lenovoE485Styles}
           alt="Lenovo E485"
-          src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/q_80/v1642270949/kompservisas-landing-page/original.webp"
+          decoding="async"
+          fetchPriority="high"
+          loading="eager"
+          sizes={HERO_IMAGE_SIZES}
+          src={HERO_IMAGE_SRC}
+          srcSet={HERO_IMAGE_SRC_SET}
         />
       </Box>
       <Grid container>
@@ -312,7 +379,11 @@ const Pagrindinis: React.FC = () => {
               component="img"
               sx={styles.lenovoL480Styles}
               alt="Lenovo L480"
-              src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/w_600/q_60/z_1/v1642615146/kompservisas-landing-page/Lenovo-L480.webp"
+              decoding="async"
+              loading="lazy"
+              sizes={CATALOGUE_IMAGE_SIZES}
+              src={LENOVO_L480_IMAGE_SRC}
+              srcSet={LENOVO_L480_IMAGE_SRC_SET}
             />
           </Box>
           <Box
@@ -337,7 +408,11 @@ const Pagrindinis: React.FC = () => {
               component="img"
               sx={styles.dellTowersStyles}
               alt="DELL towers"
-              src="https://res.cloudinary.com/kalandarisvili-dev/image/upload/w_600/v1647204074/kompservisas-landing-page/Dell-towers-optimised.webp"
+              decoding="async"
+              loading="lazy"
+              sizes={CATALOGUE_IMAGE_SIZES}
+              src={DELL_TOWERS_IMAGE_SRC}
+              srcSet={DELL_TOWERS_IMAGE_SRC_SET}
             />
           </Box>
         </Grid>

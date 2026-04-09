@@ -19,7 +19,13 @@ export const getUserAgent = (req?: NextIncomingMessage) => req?.headers["user-ag
 export const isMobileDevice = (req?: NextIncomingMessage) =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(getUserAgent(req) ?? "");
 
-export const reduceCloudinaryImageSize = (url: string) => url.replace("upload/", "upload/w_600/q_50/");
+export const createCloudinaryImageUrl = (url: string, transform: string) =>
+  url.replace("upload/", `upload/${transform}/`);
+
+export const reduceCloudinaryImageSize = (url: string) => createCloudinaryImageUrl(url, "f_auto,q_auto,w_600");
+
+export const createCloudinarySrcSet = (url: string, widths: number[]) =>
+  widths.map((width) => `${createCloudinaryImageUrl(url, `f_auto,q_auto,w_${width}`)} ${width}w`).join(", ");
 
 export const getPageFilters = (query: Dictionary<string | string[] | undefined>) => {
   const sortOrder: PossiblySortOrder =

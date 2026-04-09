@@ -10,7 +10,7 @@ import { CartItem } from "@/src/helpers/types";
 import useManageCart from "@/src/hooks/useManageCart";
 import { useGetEshopStateQuery } from "@/api/graphql-hooks";
 import * as gtag from "@/utils/gtag";
-import { reduceCloudinaryImageSize } from "@/src/helpers/utils";
+import { createCloudinarySrcSet, reduceCloudinaryImageSize } from "@/src/helpers/utils";
 import { useTranslation } from "next-i18next";
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -54,6 +54,9 @@ const cardActionStyles = (theme: Theme, isEshopEnabled?: boolean): SxProps<Theme
   padding: theme.spacing(3),
 });
 
+const PRODUCT_CARD_IMAGE_WIDTH_SET = [220, 320, 420, 600, 780];
+const PRODUCT_CARD_IMAGE_SIZES = "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 340px";
+
 const ProductCard: React.FC<{
   isRecommendedCard?: boolean;
   product?: CartItem & {
@@ -82,8 +85,9 @@ const ProductCard: React.FC<{
           alt={product.cartImageAlt}
           component="img"
           image={reduceCloudinaryImageSize(product.productCardImage.url)}
-          sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 340px"
-          srcSet=""
+          loading="lazy"
+          sizes={PRODUCT_CARD_IMAGE_SIZES}
+          srcSet={createCloudinarySrcSet(product.productCardImage.url, PRODUCT_CARD_IMAGE_WIDTH_SET)}
           sx={{
             aspectRatio: "4 / 3",
             height: "auto",

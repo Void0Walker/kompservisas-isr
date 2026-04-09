@@ -32,7 +32,7 @@ const ProductImageRow: React.FC<Props> = ({ product, cartItem }) => {
             src={product.Image.data[0]?.attributes?.url ?? ""}
             alt={product.Image.data[0]?.attributes?.alternativeText ?? "product image"}
             fill
-            sizes="(max-width: 768px) 100vw, 75vw"
+            sizes="(max-width: 600px) 92vw, (max-width: 900px) 90vw, 75vw"
             style={{ objectFit: "contain" }}
             priority
             className={styles.image}
