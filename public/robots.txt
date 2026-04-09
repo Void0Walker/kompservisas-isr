@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kompservisas.lt
+
+# Sitemaps
+Sitemap: https://www.kompservisas.lt/sitemap.xml

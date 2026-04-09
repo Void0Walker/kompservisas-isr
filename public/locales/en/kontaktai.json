@@ -1,0 +1,15 @@
+{
+   "section1_title_UAB_Kompservisas": "UAB Kompservisas",
+    "section1_address": "Address: {{value}}",
+    "section1_working_hours": "Working hours: {{value}}",
+    "section1_contacts": "Contacts: <strong><1>+370 699 69578</1></strong>, <strong><3>+370 699 62246</3></strong>",
+    "section2_title_company_details": "Company details",
+    "section2_company_code": "Company code: <strong>125675394</strong>",
+    "section2_vat_code": "VAT code: <strong>LT256753917</strong>",
+    "section2_bank_account": "Bank account: <strong>LT82 7300 0101 2925 3214</strong>",
+    "section3_title_lets_keep_in_touch": "Let's keep in touch",
+    "section3_email": "Email: <1>info@kompservisas.lt</1>",
+    "section3_about_us": "About us: <2>kompservisas.lt/apie-mus</2>",
+    "section3_facebook": "Facebook: <1>facebook.com/kompservisas</1>",
+    "section4_our_location": "Location"
+}

@@ -1,0 +1,16 @@
+{
+    "section1_title_UAB_Kompservisas": "UAB Kompservisas",
+    "section1_address": "Adresas: {{value}}",
+    "section1_working_hours": "Darbo laikas: {{value}}",
+    "section1_contacts": "Kontaktai: Tel. <strong><1>+370 699 69578</1></strong>, <strong><3>+370 699 62246</3></strong>",
+    "section2_title_company_details": "Rekvizitai",
+    "section2_company_code": "Įmonės kodas: <strong>125675394</strong>",
+    "section2_vat_code": "PVM mokėtojo kodas: <strong>LT256753917</strong>",
+    "section2_bank_account": "A/s Nr. <strong>LT82 7300 0101 2925 3214</strong>",
+    "section3_title_lets_keep_in_touch": "Bendraukime",
+    "section3_email": "El paštas: <1>info@kompservisas.lt</1>",
+    "section3_about_us": "Apie mus: <2>kompservisas.lt/apie-mus</2>",
+    "section3_facebook": "Facebook: <2>facebook.com/kompservisas</2>",
+    "section4_our_location": "Mus rasite"
+}
+

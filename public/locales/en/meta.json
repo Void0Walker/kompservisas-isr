@@ -1,0 +1,80 @@
+
+{
+    "ApieMus": {
+        "metaDescription": "UAB Kompservisas - trading in used business-class computers. Computer repair. We trade in reliable and tested business-class laptops and desktop computers.",
+        "metaName": "About Us | UAB Kompservisas",
+        "name": "About Us",
+        "path": "/about-us",
+        "keywords": "computer repair, used computers, business class"
+    },
+    "KitosPrekes": {
+        "metaDescription": "Power supplies, computer parts, computer accessories",
+        "metaName": "Other Products | UAB Kompservisas",
+        "name": "Other Products",
+        "path": "/other-products",
+        "keywords": "computer accessories, power supplies, business class"
+    },
+    "Kontaktai": {
+        "metaDescription": "Contact Us | Tel. +370 699 69578, +370 699 62246. Mon-Fri 10.00 - 18.00.",
+        "metaName": "Contact Us | UAB Kompservisas",
+        "name": "Contact Us",
+        "path": "/contacts",
+        "keywords": "computer repair, used computers, business class"
+    },
+    "Krepselis": {
+        "metaDescription": "Shopping Cart",
+        "metaName": "Shopping Cart | UAB Kompservisas",
+        "name": "Shopping Cart",
+        "path": "/shopping-cart",
+        "keywords": "computer repair, used computers, business class"
+    },
+    "Monitoriai": {
+        "metaDescription": "Used quality monitors at an affordable price",
+        "metaName": "Monitors | UAB Kompservisas",
+        "name": "Monitors",
+        "path": "/monitors",
+        "keywords": "used computers, business class, used monitors"
+    },
+    "Nesiojami": {
+        "metaDescription": "Laptops throughout Lithuania at an affordable price.",
+        "metaName": "Laptops | UAB Kompservisas",
+        "name": "Laptops",
+        "path": "/laptops",
+        "keywords": "laptops, used laptops"
+    },
+    "Pagrindinis": {
+        "metaDescription": "UAB Kompservisas - trading in used business-class computers. Computer repair. We trade in reliable and tested business-class laptops and desktop computers.",
+        "metaName": "UAB Kompservisas | Used Computers | Algirdo g. 32",
+        "name": "Home",
+        "path": "/",
+        "keywords": "computer repair, used computers, business class"
+    },
+    "Remontas": {
+        "metaDescription": "Choose us if you are looking for quality and experience at an affordable price. We will repair your used laptop or desktop computer. Algirdo g. 32 / Šaltinių g. 2, Naujamiestis",
+        "metaName": "Computer repair in Vilnius - Kompservisas",
+        "name": "Repair",
+        "path": "/repair",
+        "keywords": "computer repair, used computers, business class"
+    },
+    "Stacionarus": {
+        "metaDescription": "Desktop computers throughout Lithuania at an affordable price.",
+        "metaName": "Desktop Computers | UAB Kompservisas",
+        "name": "Desktop Computers",
+        "path": "/desktops",
+        "keywords": "desktop computers, business class"
+    },
+    "Supirkimas": {
+        "metaDescription": "Buyback of used computers.",
+        "metaName": "Buyback | UAB Kompservisas",
+        "name": "Buyback",
+        "path": "/buyback",
+        "keywords": "buyback, used computers, business class"
+    },
+    "Uzsakymas": {
+        "metaDescription": "Order Form",
+        "metaName": "Order | UAB Kompservisas",
+        "name": "Order",
+        "path": "/order/[order]",
+        "keywords": "computer purchase, used computers, business class"
+    }
+}

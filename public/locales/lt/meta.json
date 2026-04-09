@@ -1,0 +1,80 @@
+
+{
+    "ApieMus": {
+        "metaDescription": "UAB Kompservisas - prekyba naudotais verslo klasės kompiuteriais. Kompiuterių remontas. Prekiaujame patikimais, bei patikrintais verlso klasės nešiojamais, bei stacionariais kompiuteriais.",
+        "metaName": "Apie Mus | UAB Kompservisas",
+        "name": "Apie Mus",
+        "path": "/apie-mus",
+        "keywords": "kompiuterių remontas, naudoti kompiuteriai, verslo klasė"
+    },
+    "KitosPrekes": {
+        "metaDescription": "Maitinimo blokai, kompiuterių dalys, kompiuterių aksesuarai",
+        "metaName": "Kitos prekės | UAB Kompservisas",
+        "name": "Kitos prekės",
+        "path": "/kitos-prekes",
+        "keywords": "kompiuterių aksesuarai, maitinimo blokai, verslo klasė"
+    },
+    "Kontaktai": {
+        "metaDescription": "Kontaktai | Tel. +370 699 69578, +370 699 62246. I-V 10.00 - 18.00.",
+        "metaName": "Kontaktai | UAB Kompservisas",
+        "name": "Kontaktai",
+        "path": "/kontaktai",
+        "keywords": "kompiuterių remontas, naudoti kompiuteriai, verslo klasė"
+    },
+    "Krepselis": {
+        "metaDescription": "Prekių Krepšelis",
+        "metaName": "Krepšelis | UAB Kompservisas",
+        "name": "Krepšelis",
+        "path": "/krepselis",
+        "keywords": "kompiuterių remontas, naudoti kompiuteriai, verslo klasė"
+    },
+    "Monitoriai": {
+        "metaDescription": "Naudoti kokybiški monitoriai už prieinamą kainą",
+        "metaName": "Monitoriai | UAB Kompservisas",
+        "name": "Monitoriai",
+        "path": "/monitoriai",
+        "keywords": "naudoti kompiuteriai, verslo klasė, naudoti monitoriai"
+    },
+    "Nesiojami": {
+        "metaDescription": "Nešiojami kompiuteriai visoje Lietuvoje už prieinamą kainą.",
+        "metaName": "Nešiojami | UAB Kompservisas",
+        "name": "Nešiojami",
+        "path": "/nesiojami",
+        "keywords": "nešiojami kompiuteriai, verslo klasė"
+    },
+    "Pagrindinis": {
+        "metaDescription": "UAB Kompservisas - prekyba naudotais verslo klasės kompiuteriais. Kompiuterių remontas. Prekiaujame patikimais, bei patikrintais verlso klasės nešiojamais, bei stacionariais kompiuteriais.",
+        "metaName": "UAB Kompservisas | Naudoti kompiuteriai | Algirdo g. 32",
+        "name": "Pagrindinis",
+        "path": "/",
+        "keywords": "kompiuterių remontas, naudoti kompiuteriai, verslo klasė"
+    },
+    "Remontas": {
+        "metaDescription": "Rinkitės mus, jei ieškote kokybės ir patirties už prieinamą kainą. Sutaisysime Jūsų naudotą nešiojamą ar stacionarų kompiuterį. Algirdo g. 32 / Šaltinių g. 2, Naujamiestis",
+        "metaName": "Kompiuterių remontas Vilniuje - Kompservisas",
+        "name": "Remontas",
+        "path": "/remontas",
+        "keywords": "kompiuterių remontas, naudoti kompiuteriai, verslo klasė"
+    },
+    "Stacionarus": {
+        "metaDescription": "Stacionarūs kompiuteriai visoje Lietuvoje už prieinamą kainą.",
+        "metaName": "Stacionarūs kompiuteriai | UAB Kompservisas",
+        "name": "Stacionarūs",
+        "path": "/stacionarus",
+        "keywords": "stacionarūs kompiuteriai, verslo klasė"
+    },
+    "Supirkimas": {
+        "metaDescription": "Naudotų kompiuterių supirkimas.",
+        "metaName": "Supirkimas | UAB Kompservisas",
+        "name": "Supirkimas",
+        "path": "/supirkimas",
+        "keywords": "kompiuterių supirkimas, naudoti kompiuteriai, verslo klasė"
+    },
+    "Uzsakymas": {
+        "metaDescription": "Užsakymo forma",
+        "metaName": "Užsakymas | UAB Kompservisas",
+        "name": "Užsakymas",
+        "path": "DynamicPages.Uzsakymas.path",
+        "keywords": "kompiuterių supirkimas, naudoti kompiuteriai, verslo klasė"
+    }
+}

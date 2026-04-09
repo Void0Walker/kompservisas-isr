@@ -1,0 +1,16 @@
+overwrite: true
+schema: https://strapi.kompservisas.lt/graphql
+documents: "api/queries.graphql"
+generates:
+  api/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
+    config:
+      useTypeImports: true
+      nonOptionalTypename: true
+      skipTypename: false
+  ./graphql.schema.json:
+    plugins:
+      - introspection

@@ -1,0 +1,57 @@
+{
+    "header_link_pagrindins": "Homepage",
+    "header_link_pagrindinis_path": "/",
+    "header_link_nesiojami": "Laptops",
+    "header_link_nesiojami_path": "/laptops",
+    "header_link_stacionarus": "Desktops",
+    "header_link_stacionarus_path": "/desktops",
+    "header_link_kontaktai": "Contacts",
+    "header_link_kontaktai_path": "/contacts",
+    "header_link_kitos_prekes": "Other products",
+    "header_link_kitos_prekes_path": "/other-products",
+    "header_link_remontas": "Repair",
+    "header_link_remontas_path": "/repair",
+    "header_link_supirkimas": "Buyback",
+    "header_link_supirkimas_path": "/buyback",
+    "header_link_monitoriai": "Monitors",
+    "header_link_monitoriai_path": "/monitors",
+    "header_call_us": "Call us:",
+
+    "footer_link_about_us": "About us",
+    "footer_link_about_us_path": "/about-us",
+    "footer_link_co-operation": "Co-operation",
+    "footer_link_co-operation_path": "/about-us",
+
+    "footer_text_all_rights_reserved": "© {{year}} UAB Kompservisas. All rights reserved.",
+    "footer_text_moto": "<strong>KOMPSERVISAS</strong> - your reliable partner in used business class computer sales and repair services.",
+    "footer_text_general_information": "General information",
+    "footer_text_services": "Services",
+    "footer_text_kompiuteriu_remontas": "Computer repair in Vilnius",
+    "footer_text_used_computers": "Used computers in Vilnius",
+    "footer_text_used_laptops": "Used laptops in Vilnius",
+    "footer_text_used_desktops": "Used desktops in Vilnius",
+
+    "filters": "Filters",
+    "filters_manufacturer": "Manufacturer",
+    "filters_processor": "CPU",
+    "filters_screen_size": "Display size",
+    "filters_ssd_size": "SSD",
+    "filters_product_type": "Product type",
+
+    "sorting": "Sorting",
+    "sorting_price_asc": "from cheapest",
+    "sorting_price_desc": "from most expensive",
+
+    "quantity": "piece",
+    "quantity_one": "{{count}} piece",
+    "quantity_other": "{{count}} pieces",
+    "quantity_sold_out": "Sold out",
+    "add_to_cart": "ADD TO CART",
+
+    "disclaimer_laptops": "In our assortment, you will find a wide selection of high-quality, professionally checked laptops, ideally suited for business and personal needs. Each device is carefully prepared and checked, ensuring the best user experience.",
+    "disclaimer_desktops": "Purchase high-quality used desktop computers from Kompservisas. Our offered desktop computers are an ideal choice for both business and everyday use. Each computer is thoroughly checked and prepared for use. We ensure an excellent price-quality ratio and provide a warranty.",
+    "shop_will_be_closed": "Shop will be closed from {{startDate}} to {{endDate}} due to routine maintenance. We apologize for the inconvenience.",
+
+    "color_mode_switch_to_dark": "Dark mode",
+    "color_mode_switch_to_light": "Light mode"
+}

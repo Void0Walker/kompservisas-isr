@@ -1,0 +1,30 @@
+.imageArea {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.purchaseActionArea {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.purchaseButtonStyles {
+  flex-direction: column;
+}
+
+.purchaseButtonMobile {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.purchaseButtonMobile > button {
+  flex: 1;
+  max-width: none;
+  margin-bottom: 1rem;
+}
+
+.image {
+  z-index: -1;
+}

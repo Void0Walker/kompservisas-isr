@@ -1,0 +1,18 @@
+{
+    "manufacturer": "Gamintojas",
+    "name": "Pavadinimas",
+    "model": "Modelis",
+    "description": "Aprašymas",
+    "cpu": "Procesorius",
+    "ram": "Operatyvioji atmintis (RAM)",
+    "ssd": "Kietojo disko apimtis (SSD)",
+    "hdd": "Kietojo disko apimtis (HDD)",
+    "camera": "Vaizdo kamera",
+    "wifi": "Wi-Fi tinklas",
+    "screen_size": "Ekrano įstrižainė (coliais)",
+    "screen_resolution": "Ekrano raiška",
+    "graphics_card": "Vaizdo plokštė",
+    "optical_drive": "Optinis diskas",
+    "operating_system": "Operacinė sistema",
+    "warranty": "Garantija"
+}

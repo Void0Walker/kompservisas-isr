@@ -1,0 +1,887 @@
+query Products {
+  products {
+    data {
+      attributes {
+        createdAt
+        Product_Name
+        Type
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query Manufacturers {
+  manufacturers {
+    data {
+      attributes {
+        Name
+      }
+    }
+  }
+}
+
+query GetFilteredLaptops(
+  $manufacturer: [String]
+  $cpu: [String]
+  $storage_ssd: [String]
+  $display_size: [String]
+  $pageSize: Int!
+  $page: Int!
+) {
+  products(
+    filters: {
+      Type: { eq: "laptop" }
+      manufacturer: { Name: { in: $manufacturer } }
+      CPU: { Name: { in: $cpu } }
+      storage_ssd: { Size: { in: $storage_ssd } }
+      display_size: { Size: { in: $display_size } }
+    }
+    pagination: { page: $page, pageSize: $pageSize }
+  ) {
+    data {
+      id
+      attributes {
+        Product_Name
+        slug
+        grade
+        Price
+        Quantity
+        ram {
+          data {
+            attributes {
+              RAM
+            }
+          }
+        }
+        gpu {
+          data {
+            attributes {
+              GPU
+            }
+          }
+        }
+        Image {
+          data {
+            attributes {
+              url
+              formats
+              alternativeText
+            }
+          }
+        }
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        storage_ssd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        storage_hdd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+      }
+    }
+    meta {
+      pagination {
+        page
+        pageCount
+        total
+      }
+    }
+  }
+}
+
+query LaptopsMinimized {
+  products(filters: { Type: { eq: "laptop" } }, pagination: { limit: 100 }) {
+    data {
+      attributes {
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        storage_ssd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetLaptopBySlug($slug: String!) {
+  products(filters: { Type: { eq: "laptop" }, slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        Product_Name
+        Product_Description
+        slug
+        grade
+        Price
+        Quantity
+        resolution {
+          data {
+            attributes {
+              Resolution
+            }
+          }
+        }
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        ram {
+          data {
+            attributes {
+              RAM
+            }
+          }
+        }
+        gpu {
+          data {
+            attributes {
+              GPU
+            }
+          }
+        }
+        Wifi
+        WebCam
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        storage_ssd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        storage_hdd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        operating_system {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query GetFilteredTowers($manufacturer: [String], $cpu: [String], $pageSize: Int!, $page: Int!) {
+  products(
+    filters: { Type: { eq: "tower" }, manufacturer: { Name: { in: $manufacturer } }, CPU: { Name: { in: $cpu } } }
+    pagination: { page: $page, pageSize: $pageSize }
+  ) {
+    data {
+      id
+      attributes {
+        Product_Name
+        slug
+        grade
+        Price
+        Quantity
+        ram {
+          data {
+            attributes {
+              RAM
+            }
+          }
+        }
+        gpu {
+          data {
+            attributes {
+              GPU
+            }
+          }
+        }
+        Image {
+          data {
+            attributes {
+              url
+              formats
+              alternativeText
+            }
+          }
+        }
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        storage_ssd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        storage_hdd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+      }
+    }
+    meta {
+      pagination {
+        page
+        pageCount
+        total
+      }
+    }
+  }
+}
+
+query TowersMinimized {
+  products(filters: { Type: { eq: "tower" } }, pagination: { limit: 100 }) {
+    data {
+      attributes {
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetTowerBySlug($slug: String!) {
+  products(filters: { Type: { eq: "tower" }, slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        Product_Name
+        Product_Description
+        slug
+        grade
+        Price
+        Quantity
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        ram {
+          data {
+            attributes {
+              RAM
+            }
+          }
+        }
+        gpu {
+          data {
+            attributes {
+              GPU
+            }
+          }
+        }
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        CPU {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        storage_ssd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        storage_hdd {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        operating_system {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query Monitors {
+  products(filters: { Type: { eq: "monitor" } }, pagination: { limit: 100 }) {
+    data {
+      id
+      attributes {
+        Product_Description
+        Product_Name
+        slug
+        grade
+        Price
+        Quantity
+        resolution {
+          data {
+            attributes {
+              Resolution
+            }
+          }
+        }
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query GetMonitorsBySlug($slug: String!) {
+  products(filters: { Type: { eq: "monitor" }, slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        Product_Name
+        Product_Description
+        slug
+        grade
+        Price
+        Quantity
+        resolution {
+          data {
+            attributes {
+              Resolution
+            }
+          }
+        }
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        display_size {
+          data {
+            attributes {
+              Size
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query OtherProducts {
+  products(filters: { Type: { eq: "other" } }, pagination: { limit: 100 }) {
+    data {
+      id
+      attributes {
+        Product_Name
+        Product_Description
+        Other_product_model
+        slug
+        grade
+        Price
+        Quantity
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        other_product_type {
+          data {
+            attributes {
+              Type
+            }
+          }
+        }
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query GetOtherProductsBySlug($slug: String!) {
+  products(filters: { Type: { eq: "other" }, slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        Product_Name
+        Product_Description
+        Other_product_model
+        slug
+        grade
+        Price
+        Quantity
+        Image {
+          data {
+            attributes {
+              url
+              name
+              caption
+              width
+              height
+              hash
+              formats
+              alternativeText
+            }
+          }
+        }
+        manufacturer {
+          data {
+            attributes {
+              Name
+            }
+          }
+        }
+        other_product_type {
+          data {
+            attributes {
+              Type
+            }
+          }
+        }
+        warranty {
+          data {
+            attributes {
+              Warranty
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
+
+query GetRecommendedProducts {
+  recommendedProducts {
+    data {
+      id
+      attributes {
+        Position
+        product {
+          data {
+            id
+            attributes {
+              Product_Name
+              Type
+              Price
+              Quantity
+              CPU {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              storage_ssd {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              storage_hdd {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              operating_system {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              manufacturer {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              Image {
+                data {
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    formats
+                  }
+                }
+              }
+              display_size {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              slug
+              grade
+              Product_Description
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetRepairsList {
+  repairs(pagination: { limit: 1000 }) {
+    data {
+      id
+      attributes {
+        Description
+        RepairType
+        Price
+      }
+    }
+  }
+}
+
+query GetOrderbyUID($UID: String!) {
+  findByUID(UID: $UID) {
+    data {
+      attributes {
+        State
+        Kompservisas_id
+        Order_description
+        products {
+          data {
+            attributes {
+              Product_Name
+              Type
+              CPU {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              storage_ssd {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              storage_hdd {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              operating_system {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              manufacturer {
+                data {
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              Image {
+                data {
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    formats
+                    url
+                  }
+                }
+              }
+              display_size {
+                data {
+                  attributes {
+                    Size
+                  }
+                }
+              }
+              grade
+              Price
+              Product_Description
+              resolution {
+                data {
+                  attributes {
+                    Resolution
+                  }
+                }
+              }
+              ram {
+                data {
+                  attributes {
+                    RAM
+                  }
+                }
+              }
+              gpu {
+                data {
+                  attributes {
+                    GPU
+                  }
+                }
+              }
+              warranty {
+                data {
+                  attributes {
+                    Warranty
+                  }
+                }
+              }
+              Wifi
+              WebCam
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetEshopState {
+  eshops {
+    data {
+      attributes {
+        Enabled
+      }
+    }
+  }
+}

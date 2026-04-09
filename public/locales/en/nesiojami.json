@@ -1,0 +1,11 @@
+{
+    "section1_product_description_qnt": "Quantity: <strong>{{value}}</strong>",
+    "section1_product_description_price": "Price: <strong>{{value}}</strong>",
+    "section1_product_address_note": "You can purchase the item at the address <strong>Algirdo g. 32 / Šaltinių g. 2</strong>",
+    "section1_product_description_product_types": "Types of used computers",
+    "section1_product_description_product_type_A": "<strong>A</strong> - the computer has no usage marks or the marks are very minor.",
+    "section1_product_description_product_type_B": "<strong>B</strong> - the computer has small usage marks (minor scratches).",
+    "section1_product_description_product_type_C": "<strong>C</strong> - the computer is good technical condition, but has larger scratches and other signs of wear.",
+    "section1_product_description_photo_discrepancy": "This photo is for illustration purposes and may not reflect the actual condition of the item",
+    "section2_technical_specifications": "Technical Specifications"
+}

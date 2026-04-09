@@ -1,0 +1,60 @@
+{
+    "header_link_pagrindins": "Pagrindinis",
+    "header_link_pagrindinis_path": "/",
+    "header_link_nesiojami": "Nešiojami",
+    "header_link_nesiojami_path": "/nesiojami",
+    "header_link_stacionarus": "Stacionarūs",
+    "header_link_stacionarus_path": "/stacionarus",
+    "header_link_kontaktai": "Kontaktai",
+    "header_link_kontaktai_path": "/kontaktai",
+    "header_link_kitos_prekes": "Kitos prekės",
+    "header_link_kitos_prekes_path": "/kitos-prekes",
+    "header_link_apie_mus": "Apie mus",
+    "header_link_apie_mus_path": "/apie-mus",
+    "header_link_remontas": "Remontas",
+    "header_link_remontas_path": "/remontas",
+    "header_link_supirkimas": "Supirkimas",
+    "header_link_supirkimas_path": "/supirkimas",
+    "header_link_monitoriai": "Monitoriai",
+    "header_link_monitoriai_path": "/monitoriai",
+    "header_call_us": "Skambinkite ir klauskite:",
+
+    "footer_link_about_us": "Apie mus",
+    "footer_link_about_us_path": "/apie-mus",
+    "footer_link_co-operation": "Bendradarbiavimas",
+    "footer_link_co-operation_path": "/apie-mus",
+
+    "footer_text_all_rights_reserved": "© {{year}} UAB Kompservisas. Visos teisės išsaugotos.",
+    "footer_text_moto": "<strong>KOMPSERVISAS</strong> - jūsų patikimas naudotų verslo klasės kompiuterių pardavimo ir remonto partneris.",
+    "footer_text_general_information": "Bendra informacija",
+    "footer_text_services": "Paslaugos",
+    "footer_text_kompiuteriu_remontas": "Kompiuterių remontas Vilniuje",
+    "footer_text_used_computers": "Naudoti kompiuteriai Vilniuje",
+    "footer_text_used_laptops": "Nešiojami naudoti kompiuteriai (laptop) Vilniuje",
+    "footer_text_used_desktops": "Stacionarūs naudoti kompiuteriai Vilniuje",
+
+    "filters": "Filtrai",
+    "filters_manufacturer": "Gamintojas",
+    "filters_processor": "Procesorius",
+    "filters_screen_size": "Ekrano dydis",
+    "filters_ssd_size": "SSD talpa",
+    "filters_product_type": "Prekės tipas",
+
+
+    "sorting": "Rūšiavimas",
+    "sorting_price_asc": "nuo pigiausio",
+    "sorting_price_desc": "nuo brangiausio",
+
+    "quantity": "vnt",
+    "quantity_one": "{{count}} vnt",
+    "quantity_other": "{{count}} vnt",
+    "quantity_sold_out": "Išparduota",
+    "add_to_cart": "Į KREPŠELĮ",
+
+    "disclaimer_laptops": "Mūsų asortimente rasite platų kokybiškų, profesionaliai patikrintų nešiojamųjų kompiuterių pasirinkimą, idealiai tinkantį verslo ir asmeninėms reikmėms. Kiekvienas įrenginys yra atidžiai paruoštas ir patikrintas, užtikrinant geriausią naudojimo patirtį.",
+    "disclaimer_desktops": "Įsigykite aukštos kokybės naudotus stacionarius kompiuterius iš Kompserviso. Mūsų siūlomi stacionarūs kompiuteriai yra idealus pasirinkimas tiek verslui, tiek kasdieniam naudojimui. Kiekvienas kompiuteris yra kruopščiai patikrinamas ir paruošiamas naudojimui. Užtikriname puikią kainos ir kokybės santykį, suteikiame garantiją.",
+    "shop_will_be_closed": "Parduotuvė bus uždaryta nuo {{startDate}} iki {{endDate}} dėl profilaktinių darbų. Atsiprašome už nepatogumus.",
+
+    "color_mode_switch_to_dark": "Tamsus režimas",
+    "color_mode_switch_to_light": "Šviesus režimas"
+}

@@ -1,0 +1,18 @@
+{
+    "manufacturer": "Manufacturer",
+    "name": "Name",
+    "model": "Model",
+    "description": "Description",
+    "cpu": "Processor",
+    "ram": "Random Access Memory (RAM)",
+    "ssd": "Solid State Drive (SSD) Capacity",
+    "hdd": "Hard Disk Drive (HDD) Capacity",
+    "camera": "Camera",
+    "wifi": "Wi-Fi Network",
+    "screen_size": "Screen Size (inches)",
+    "screen_resolution": "Screen Resolution",
+    "graphics_card": "Graphics Card",
+    "optical_drive": "Optical Drive",
+    "operating_system": "Operating System",
+    "warranty": "Warranty"
+}

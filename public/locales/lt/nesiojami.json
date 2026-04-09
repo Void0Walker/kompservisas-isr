@@ -1,0 +1,11 @@
+{
+    "section1_product_description_qnt": "Kiekis: <strong>{{value}}</strong>",
+    "section1_product_description_price": "Kaina: <strong>{{value}}</strong>",
+    "section1_product_address_note": "Prekę galite įsigyti adresu <strong>Algirdo g. 32 / Šaltinių g. 2</strong>",
+    "section1_product_description_product_types": "Naudotų kompiuterių rūšys",
+    "section1_product_description_product_type_A": "<strong>A</strong> - kompiuteris neturi jokių naudojimo žymių arba tos žymės yra labai menkos.",
+    "section1_product_description_product_type_B": "<strong>B</strong> - kompiuteris turi smulkių naudojimo žymių (smulkus įbrėžimai).",
+    "section1_product_description_product_type_C": "<strong>C</strong> - kompiuteris yra tvarkingas techniškai, tačiau turi stambesnių įbrėžimų ir kitų nusidėvėjimo žimių.",
+    "section1_product_description_photo_discrepancy": "Ši nuotrauka yra pavyzdinė ir gali neatitikti realios prekės būklės",
+    "section2_technical_specifications": "Techniniai duomenys"
+}
