@@ -453,6 +453,7 @@ const Pagrindinis: React.FC = () => {
             key={index}
             onClick={() => router.push(product.cartItem?.cartItemLink ?? "/")}
             isRecommendedCard
+            isLcpCandidate={index === 0}
           />
         ))}
       </Styled.RecommendedContainer>

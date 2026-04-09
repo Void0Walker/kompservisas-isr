@@ -59,6 +59,7 @@ const PRODUCT_CARD_IMAGE_SIZES = "(max-width: 600px) 100vw, (max-width: 900px) 5
 
 const ProductCard: React.FC<{
   isRecommendedCard?: boolean;
+  isLcpCandidate?: boolean;
   product?: CartItem & {
     productCardImage: {
       alt: string;
@@ -68,7 +69,7 @@ const ProductCard: React.FC<{
     };
   };
   onClick: () => void;
-}> = ({ isRecommendedCard = false, product, onClick }) => {
+}> = ({ isRecommendedCard = false, isLcpCandidate = false, product, onClick }) => {
   const theme = useTheme();
   const { isAddToCartDisabled, addToCart } = useManageCart(product);
 
@@ -85,7 +86,9 @@ const ProductCard: React.FC<{
           alt={product.cartImageAlt}
           component="img"
           image={reduceCloudinaryImageSize(product.productCardImage.url)}
-          loading="lazy"
+          decoding="async"
+          fetchPriority={isLcpCandidate ? "high" : "auto"}
+          loading={isLcpCandidate ? "eager" : "lazy"}
           sizes={PRODUCT_CARD_IMAGE_SIZES}
           srcSet={createCloudinarySrcSet(product.productCardImage.url, PRODUCT_CARD_IMAGE_WIDTH_SET)}
           sx={{
