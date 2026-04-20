@@ -1,0 +1,42 @@
+---
+name: Lean Mobile-First Components
+globs: "**/*.tsx"
+alwaysApply: false
+description: Guidelines for writing lean, performant, mobile-first React components
+---
+
+# Components
+
+Write components that are small, mobile-first, and cheap to render. This is an
+ISR e-shop — bundle size and Core Web Vitals directly affect SEO and conversion.
+
+## Mobile-First
+
+- Design for ~360px width first; add overrides for larger screens.
+- Use MUI breakpoints consistently: `xs < sm < md < lg < xl`.
+- Prefer CSS Grid / Flexbox layouts that reflow naturally over JS-driven layouts.
+- Avoid rendering two copies of the same content for mobile vs desktop; use
+  responsive CSS. If you truly need different trees (rare — see
+  `ParagraphContainer` in `ApieMus`), keep them minimal and comment why.
+
+## Performance
+
+- **Images**: always use `next/image`. Provide `width`, `height`, `sizes`, and
+  meaningful `alt`. Set `priority` **only** for above-the-fold LCP images.
+- **Imports**: use `lodash-es` (tree-shakable), never `lodash`. Use named imports
+  from `@mui/material` / `@mui/icons-material`.
+- **Memoization**: wrap expensive or frequently-re-rendered components in `memo`
+  (see `PageHead`). Don't memo trivial components.
+- **Client vs static**: prefer content that renders at build time via ISR. Only
+  reach for `useEffect` / client state when truly interactive.
+- **3rd-party scripts**: route through Partytown (`type="text/partytown"`).
+
+## Structure
+
+- Keep components under ~150 lines; split when they grow.
+- Co-locate the component, its styles (`<name>Styles.ts`), and any `.module.css`
+  in the same folder.
+- Extract reusable pieces into `src/components/`; page-specific pieces stay in
+  `src/pages/<PageName>/`.
+- Route files in `pages/` should only handle `getStaticProps` / `getStaticPaths`
+  and render the page component — no JSX logic.

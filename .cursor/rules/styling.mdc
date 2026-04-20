@@ -1,0 +1,64 @@
+---
+name: Styling (Emotion + MUI)
+globs: "src/**/*.{ts,tsx}"
+alwaysApply: false
+description: CSS-in-JS conventions using Emotion styled + MUI SxProps
+---
+
+# Styling
+
+Continue the existing CSS-in-JS pattern. Every page/component with non-trivial
+styling has a sibling `<name>Styles.ts` file that exports **two** things:
+
+1. A named `Styled` object of `styled(...)` components for structural/layout elements.
+2. A default object of `SxProps<Theme>` values passed to MUI components via `sx`.
+
+Always import the shared theme from `@/src/theme` (never hardcode colors, spacing,
+or breakpoint values — use `theme.spacing(n)` and `theme.breakpoints.down(...)`).
+
+## Template
+
+```ts
+import { Theme } from "@mui/material";
+import { styled, SxProps } from "@mui/system";
+import theme from "@/src/theme";
+
+const PageContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(4),
+  [theme.breakpoints.down("md")]: {
+    gap: theme.spacing(2),
+  },
+});
+
+const heading: SxProps<Theme> = {
+  fontSize: "2.5rem",
+  [theme.breakpoints.down("md")]: { fontSize: "2rem" },
+};
+
+export const Styled = { PageContainer };
+
+const pageStyles = { heading };
+export default pageStyles;
+```
+
+## Consumption
+
+```tsx
+import styles, { Styled } from "@/src/pages/Foo/fooStyles";
+// ...
+<Styled.PageContainer>
+  <Typography sx={styles.heading}>...</Typography>
+</Styled.PageContainer>
+```
+
+## Do / Don't
+
+- **Do** keep one styles file per page or feature component.
+- **Do** use `styled(...)` for repeated structural elements; use `SxProps` for one-off
+  styles applied to MUI components.
+- **Don't** use `makeStyles` / `createStyles` (MUI v4 API — removed).
+- **Don't** inline large style objects in components; extract to the styles file.
+- **Don't** add global CSS unless unavoidable; `*.module.css` is only used for
+  `next/image`-specific tweaks (e.g. `ProductImageRow.module.css`).

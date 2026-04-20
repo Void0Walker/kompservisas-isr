@@ -1,0 +1,15 @@
+---
+name: API Conventions
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+description: GraphQL / Strapi API usage conventions
+---
+
+# API Conventions
+
+- Generated GraphQL types and operations live in `api/generated/` — **never edit by hand**.
+  Regenerate with `npm run generate` (`graphql-codegen --config codegen.yml`).
+- Hand-written hooks that wrap generated operations live in `api/graphql-hooks.ts`.
+  Add new hooks there; prefer a thin wrapper over calling `graphqlRequest` in components.
+- Before regenerating the schema, **ask the user to enable Strapi develop mode** —
+  introspection is disabled in production.

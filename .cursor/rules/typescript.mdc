@@ -1,0 +1,46 @@
+---
+name: TypeScript
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+description: TypeScript conventions focused on type safety in this codebase
+---
+
+# TypeScript
+
+Strict mode is on. Keep it that way and write code that respects it.
+
+## Type Safety
+
+- **No `any`.** Use `unknown` for genuinely unknown values and narrow with a
+  type guard before use.
+- **Prefer type guards over `as` casts.** If you must cast (e.g. narrowing a
+  router `locale` string), add a comment explaining why the cast is sound.
+  ```ts
+  // ❌ avoid
+  const x = data as Product;
+
+  // ✅ prefer
+  function isProduct(v: unknown): v is Product { /* ... */ }
+  if (isProduct(data)) { /* data is Product here */ }
+  ```
+- **Nullish-aware**: use `?.` and `??`. Don't mix `??` with `||` to pick defaults
+  for possibly-`0`/`""` values.
+- **No non-null assertions (`!`)** in app code except in `getStaticProps` where
+  `locale ?? defaultLocale!` is the established Next.js pattern.
+
+## Shapes & APIs
+
+- Exported functions and React component props must have explicit types.
+  Internal helpers can rely on inference.
+- Use `interface` for public/exported object shapes that might be extended;
+  use `type` for unions, intersections, and mapped/utility types.
+- Leverage built-in utility types (`Partial`, `Pick`, `Omit`, `Readonly`,
+  `NonNullable`) instead of redefining shapes.
+- Discriminated unions for state with multiple modes (loading / error / data).
+
+## Generated & i18n Types
+
+- Never edit `api/generated/**` — regenerate via `npm run generate`.
+- Never edit `@types/resources.d.ts` — regenerate via `npm run interface` after
+  translation changes.
+- Import types from generated files rather than re-declaring them.

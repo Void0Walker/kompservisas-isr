@@ -1,0 +1,59 @@
+---
+name: SEO and GEO
+globs: "{pages,src/pages,src/components}/**/*.{ts,tsx}"
+alwaysApply: false
+description: Traditional SEO and Generative Engine Optimization (GEO) guidelines
+---
+
+# SEO & GEO
+
+Kompservisas depends on organic traffic from both classic search engines (Google,
+Bing) and generative engines (ChatGPT, Perplexity, Google AI Overviews, Gemini).
+Optimize for both.
+
+## Per-Page Metadata
+
+- Every page renders `<PageHead name={Pages.X.name} isProductPage={false} />`.
+  It reads titles, descriptions, keywords, canonical URL, and OG tags from
+  `STATIC_METADATA[locale][name]` in `src/metaData.ts`.
+- When adding a page, add a matching entry to `STATIC_METADATA` for **both** `lt` and `en`.
+- Canonical URL format: `https://kompservisas.lt${path}` (locale-prefixed for `en`).
+- Use **one** `<h1>` per page; keep heading hierarchy (`h1` → `h2` → `h3`) semantic.
+
+## Structured Data (JSON-LD)
+
+- Product pages: `<ProductJsonLd>` from `next-seo` with `availability`
+  (`InStock` / `OutOfStock`), `itemCondition` (`UsedCondition`), `price`,
+  `priceCurrency: "EUR"`, and real `images`.
+- Add `BreadcrumbJsonLd` anywhere `BreadcrumbList` is rendered.
+- Consider `OrganizationJsonLd` / `LocalBusinessJsonLd` once in the root layout
+  (physical shop address, phone, opening hours).
+- Add `FAQPageJsonLd` for pages with Q&A content.
+
+## Rendering
+
+- Always render primary content via ISR (`getStaticProps` + `revalidate: ISR_REVALIDATE_SECONDS`).
+  Client-only content is invisible to most crawlers and generative engines.
+- Use semantic HTML: `<main>`, `<nav>`, `<article>`, `<section>`, `<aside>`.
+- Every `<Image>` needs a descriptive `alt` (brand, model, condition — not "image1").
+
+## GEO (Generative Engine Optimization)
+
+Generative engines extract facts and cite sources. Make extraction easy:
+
+- **Entity-rich text**: mention brand, model number, CPU, RAM, grade, and price
+  in plain text, not only in images or image alt.
+- **Concise factual paragraphs**: short sentences with concrete specs beat
+  marketing prose.
+- **Explicit answers**: where users ask questions (warranty, delivery, condition
+  grading), provide a direct answer paragraph near the top of the section.
+- **Consistent naming**: use the same entity names across pages (e.g. "ThinkPad T14 Gen 3")
+  so engines can link mentions.
+- **Linked sources of truth**: cross-link related pages (product ↔ category ↔ FAQ).
+- **Fresh dates**: include last-updated dates on articles/FAQs where relevant.
+
+## Don't
+
+- Don't use client-only rendering for primary product/category content.
+- Don't ship pages without metadata entries in both locales.
+- Don't stuff keywords — write for humans; engines reward clarity.
