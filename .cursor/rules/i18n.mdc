@@ -1,0 +1,59 @@
+---
+name: Bilingual Content (next-i18next)
+globs: "**/*.{ts,tsx,json}"
+alwaysApply: false
+description: Rules for handling Lithuanian (default) and English translations
+---
+
+# i18n — Lithuanian + English
+
+Locales: `lt` (default) and `en`. Config in `next-i18next.config.js`. Translation
+files live in `public/locales/<locale>/<namespace>.json`. Every user-visible
+string must be translated — no hardcoded copy.
+
+## Page Setup
+
+In the `pages/<route>/index.tsx` route file, load namespaces in `getStaticProps`:
+
+```tsx
+export const getStaticProps: GetStaticProps = async ({ locale, defaultLocale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? defaultLocale!, ["common", "apie-mus"])),
+  },
+  revalidate: ISR_REVALIDATE_SECONDS,
+});
+```
+
+## In Components
+
+```tsx
+import { Trans, useTranslation } from "react-i18next";
+
+const { t } = useTranslation(["common", "apie-mus"]);
+
+<Typography>{t("apie-mus:section1_title_about_US")}</Typography>
+
+<Trans i18nKey="section1_body_description" ns="apie-mus" values={{ year: 2024 }}
+       components={{ strong: <strong /> }}>
+  {null}
+</Trans>
+```
+
+- Use `<Trans>` (not string concatenation) for copy containing markup or interpolation.
+- Namespace keys explicitly (`"apie-mus:key"` or `ns="apie-mus"`) to avoid collisions.
+- Key naming: `<section>_<role>_<detail>` in `snake_case`
+  (e.g. `section2_title_cooperation`).
+
+## When Adding or Changing Keys
+
+1. Add the key to **both** `public/locales/lt/<ns>.json` and `public/locales/en/<ns>.json`.
+   Never ship a key in only one locale.
+2. Run `npm run interface` to regenerate `@types/resources.d.ts` so `t()` stays typed.
+3. If you create a new namespace file, register it in the page's
+   `serverSideTranslations([...])` array.
+
+## Don't
+
+- Don't hardcode visible strings, even "just for now".
+- Don't mix LT/EN strings inside a single translation value.
+- Don't build sentences with string concatenation — use `<Trans>` with `components`.
